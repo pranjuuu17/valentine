@@ -9,77 +9,73 @@
 
 <style>
 :root{
-  --bg1:#ffd6e7;
-  --bg2:#ffeef6;
-  --card:#ffffffcc;
-  --yes:#ff3b7a;
-  --yesHover:#ff1f68;
+ --bg1:#ffd6e7;
+ --bg2:#ffeef6;
+ --card:#ffffffcc;
+ --yes:#ff3b7a;
+ --yesHover:#ff1f68;
 }
 
 *{box-sizing:border-box;}
 
 body{
-  margin:0;
-  min-height:100svh;
-  display:grid;
-  place-items:center;
-  background:radial-gradient(circle at top,var(--bg2),var(--bg1));
-  font-family:system-ui,sans-serif;
-  overflow:hidden;
-  padding:16px;
+ margin:0;
+ min-height:100svh;
+ display:grid;
+ place-items:center;
+ background:radial-gradient(circle at top,var(--bg2),var(--bg1));
+ font-family:system-ui,sans-serif;
+ overflow:hidden;
+ padding:16px;
 }
 
 #confettiCanvas{
-  position:fixed;
-  inset:0;
-  pointer-events:none;
-  z-index:9999;
+ position:fixed;
+ inset:0;
+ pointer-events:none;
+ z-index:9999;
 }
 
 .card{
-  width:min(720px,92vw);
-  padding:26px 22px;
-  background:var(--card);
-  backdrop-filter:blur(10px);
-  border-radius:22px;
-  text-align:center;
-  box-shadow:0 18px 60px rgba(0,0,0,.15);
+ width:min(720px,92vw);
+ padding:26px 22px;
+ background:var(--card);
+ backdrop-filter:blur(10px);
+ border-radius:22px;
+ text-align:center;
 }
 
-.art{width:min(260px,80vw);margin:0 auto 10px;}
-
 h1{
-  font-size:clamp(26px,4vw,44px);
-  margin:12px 0 18px;
-  transition:.4s;
+ font-size:clamp(26px,4vw,44px);
+ margin:12px 0 18px;
+ transition:.4s;
 }
 
 .love-glow{
-  color:#ff1f68;
-  text-shadow:0 0 10px #ff4d7d,0 0 20px #ff4d7d;
+ color:#ff1f68;
+ text-shadow:0 0 10px #ff4d7d,0 0 20px #ff4d7d;
 }
 
 .button-zone{
-  position:relative;
-  width:min(520px,92%);
-  height:150px;
-  margin:0 auto;
+ position:relative;
+ width:min(520px,92%);
+ height:150px;
+ margin:0 auto;
 }
 
 button{
-  position:absolute;
-  top:50%;
-  transform:translateY(-50%);
-  padding:16px 24px;
-  font-size:18px;
-  font-weight:800;
-  border-radius:999px;
-  border:none;
-  cursor:pointer;
+ position:absolute;
+ top:50%;
+ transform:translateY(-50%);
+ padding:16px 24px;
+ font-size:18px;
+ font-weight:800;
+ border-radius:999px;
+ border:none;
+ cursor:pointer;
 }
 
 #yesBtn{left:18%;background:var(--yes);color:#fff;}
-#yesBtn:hover{background:var(--yesHover);}
 #noBtn{left:62%;background:#e5e7eb;}
 
 .hint{margin-top:10px;font-size:13px;opacity:.7;}
@@ -87,23 +83,23 @@ button{
 .result{display:none;margin-top:18px;}
 
 .signature{
-  margin-top:10px;
-  font-size:16px;
-  font-weight:600;
-  color:#ff1f68;
+ margin-top:10px;
+ font-size:16px;
+ font-weight:600;
+ color:#ff1f68;
 }
 
-/* floating hearts */
+/* hearts */
 .hearts span{
-  position:fixed;
-  bottom:-20px;
-  font-size:20px;
-  animation:float 4s linear infinite;
+ position:fixed;
+ bottom:-20px;
+ font-size:20px;
+ animation:float 4s linear infinite;
 }
 
 @keyframes float{
-  from{transform:translateY(0);opacity:1;}
-  to{transform:translateY(-110vh);opacity:0;}
+ from{transform:translateY(0);opacity:1;}
+ to{transform:translateY(-110vh);opacity:0;}
 }
 </style>
 </head>
@@ -113,41 +109,27 @@ button{
 <canvas id="confettiCanvas"></canvas>
 <div class="hearts" id="hearts"></div>
 
-<!-- Hidden YouTube player -->
-<div id="player" style="display:none;"></div>
+<!-- SONG -->
+<audio id="song" src="shayrana.mp3"></audio>
 
 <main class="card">
-
-<svg class="art" viewBox="0 0 320 240">
-  <circle cx="160" cy="120" r="70" fill="#f7c7a1"/>
-  <circle cx="145" cy="120" r="6"/>
-  <circle cx="175" cy="120" r="6"/>
-  <path d="M160 135 C155 140 155 145 160 150
-           C165 145 165 140 160 135Z" fill="#ff7aa2"/>
-  <path d="M210 55 C210 40 225 35 235 45
-           C245 35 260 40 260 55
-           C260 75 235 85 235 100
-           C235 85 210 75 210 55Z" fill="#ff4d7d"/>
-</svg>
 
 <h1 id="mainText">Mrunmayee will you be my valentine?</h1>
 
 <section class="button-zone" id="zone">
-  <button id="yesBtn">Yes</button>
-  <button id="noBtn">No</button>
+ <button id="yesBtn">Yes</button>
+ <button id="noBtn">No</button>
 </section>
 
 <div class="hint" id="hint">“No” seems a bit shy 😈</div>
 
 <section class="result" id="result">
-  <img class="fireworks"
-    src="https://media.giphy.com/media/26ufdipQqU2lhNA4g/giphy.gif" />
-  <div class="signature">— forever yours, Sahil ❤️</div>
+ <img class="fireworks"
+ src="https://media.giphy.com/media/26ufdipQqU2lhNA4g/giphy.gif"/>
+ <div class="signature">— forever yours, Pranjal ❤️</div>
 </section>
 
 </main>
-
-<script src="https://www.youtube.com/iframe_api"></script>
 
 <script>
 const zone=document.getElementById("zone");
@@ -157,85 +139,87 @@ const result=document.getElementById("result");
 const hint=document.getElementById("hint");
 const mainText=document.getElementById("mainText");
 const hearts=document.getElementById("hearts");
+const song=document.getElementById("song");
 
-/* typing effect */
+/* typing */
 function type(text,i=0){
-  if(i<=text.length){
-    mainText.innerHTML=text.slice(0,i);
-    setTimeout(()=>type(text,i+1),40);
-  }
+ if(i<=text.length){
+   mainText.innerHTML=text.slice(0,i);
+   setTimeout(()=>type(text,i+1),40);
+ }
 }
 
 /* hearts */
 function createHearts(){
-  for(let i=0;i<20;i++){
-    const s=document.createElement("span");
-    s.innerHTML="❤️";
-    s.style.left=Math.random()*100+"%";
-    s.style.animationDelay=Math.random()*2+"s";
-    hearts.appendChild(s);
-  }
+ for(let i=0;i<20;i++){
+   const s=document.createElement("span");
+   s.innerHTML="❤️";
+   s.style.left=Math.random()*100+"%";
+   s.style.animationDelay=Math.random()*2+"s";
+   hearts.appendChild(s);
+ }
 }
 
-/* CONFETTI */
+/* confetti */
 const confettiInstance=confetti.create(
-  document.getElementById("confettiCanvas"),
-  {resize:true}
+ document.getElementById("confettiCanvas"),
+ {resize:true}
 );
 
 function fullScreenConfetti(){
-  const end=Date.now()+1500;
-  (function frame(){
-    confettiInstance({particleCount:10,spread:90});
-    if(Date.now()<end)requestAnimationFrame(frame);
-  })();
-}
-
-/* YOUTUBE PLAYER */
-let player;
-function onYouTubeIframeAPIReady(){
-  player=new YT.Player("player",{
-    height:"0",
-    width:"0",
-    videoId:"d7ITuS7w1gI", // Aaj Dil Shayrana
-    playerVars:{autoplay:0,controls:0}
-  });
+ const end=Date.now()+1500;
+ (function frame(){
+   confettiInstance({particleCount:10,spread:90});
+   if(Date.now()<end)requestAnimationFrame(frame);
+ })();
 }
 
 /* YES CLICK */
 yesBtn.addEventListener("click",()=>{
-  zone.style.display="none";
-  hint.style.display="none";
+ zone.style.display="none";
+ hint.style.display="none";
 
-  mainText.classList.add("love-glow");
-  type("yeyyy i know you love me a lot ❤️<br>Happy Valentines Day my love! 💖");
+ mainText.classList.add("love-glow");
 
-  createHearts();
-  result.style.display="block";
-  fullScreenConfetti();
+ type("yeyyy i know you love me a lot ❤️<br>Happy Valentines Day my love! 💖");
 
-  if(player) player.playVideo();
+ createHearts();
+
+ result.style.display="block";
+ fullScreenConfetti();
+
+ // PLAY SONG
+ song.volume=0.65;
+ song.play();
 });
 
 /* NO RUN */
 function clamp(n,a,b){return Math.max(a,Math.min(b,n));}
+
 function moveNo(px,py){
-  const z=zone.getBoundingClientRect();
-  const b=noBtn.getBoundingClientRect();
-  let dx=(b.left+b.width/2)-px;
-  let dy=(b.top+b.height/2)-py;
-  let m=Math.hypot(dx,dy)||1;
-  dx/=m;dy/=m;
-  noBtn.style.left=clamp((b.left-z.left)+dx*150,0,z.width-b.width)+"px";
-  noBtn.style.top=clamp((b.top-z.top)+dy*150,0,z.height-b.height)+"px";
+ const z=zone.getBoundingClientRect();
+ const b=noBtn.getBoundingClientRect();
+
+ let dx=(b.left+b.width/2)-px;
+ let dy=(b.top+b.height/2)-py;
+ let m=Math.hypot(dx,dy)||1;
+ dx/=m;dy/=m;
+
+ noBtn.style.left=
+   clamp((b.left-z.left)+dx*150,0,z.width-b.width)+"px";
+
+ noBtn.style.top=
+   clamp((b.top-z.top)+dy*150,0,z.height-b.height)+"px";
 }
+
 zone.addEventListener("pointermove",e=>{
-  const b=noBtn.getBoundingClientRect();
-  if(Math.hypot((b.left+b.width/2)-e.clientX,(b.top+b.height/2)-e.clientY)<140)
-    moveNo(e.clientX,e.clientY);
+ const b=noBtn.getBoundingClientRect();
+ if(Math.hypot(
+   (b.left+b.width/2)-e.clientX,
+   (b.top+b.height/2)-e.clientY)<140)
+ moveNo(e.clientX,e.clientY);
 });
 </script>
 
 </body>
 </html>
-
